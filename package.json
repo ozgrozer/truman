@@ -1,0 +1,49 @@
+{
+  "name": "truman",
+  "description": "A desktop app to take screenshots of web pages",
+  "author": "ozgrozer",
+  "version": "0.0.1",
+  "main": "electron.js",
+  "scripts": {
+    "start-parcel": "parcel ./src/frontend/js/index.jsx --out-dir ./public --public-url / --port 1121",
+    "start-electron": "electron .",
+    "build": "npm run build-parcel && npm run build-electron",
+    "build-parcel": "parcel build ./src/frontend/js/index.jsx --out-dir ./public --public-url / --no-source-maps",
+    "build-electron": "build -mw && npm run release",
+    "release": "npm run release:mac && npm run release:windows",
+    "prerelease:mac": "rm -rf releases/$npm_package_version/mac && mkdirp releases/$npm_package_version/mac",
+    "release:mac": "cp -R dist/*.dmg releases/$npm_package_version/mac/$npm_package_name-$npm_package_version.dmg",
+    "prerelease:windows": "rm -rf releases/$npm_package_version/windows && mkdirp releases/$npm_package_version/windows",
+    "release:windows": "cp -R dist/*.exe releases/$npm_package_version/windows/$npm_package_name-$npm_package_version.exe",
+    "postrelease": "rm -rf dist"
+  },
+  "engines": {
+    "node": "^10.4.1",
+    "npm": "^6.1.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "electron": "^2.0.6",
+    "electron-builder": "^20.26.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.8.3",
+    "parcel-bundler": "^1.7.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "puppeteer": "^1.6.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  },
+  "build": {
+    "appId": "com.ozgrozer.truman",
+    "files": [
+      "electron.js",
+      "node_modules",
+      "public/**/*"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+@import './bootstrapComponents';
+
+$titleHeight: 22px;
+
+html, body {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+#drag {
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  height: $titleHeight;
+  -webkit-app-region: drag;
+  background-color: #272c35;
+  font: 12px/#{$titleHeight} Menlo;
+}
+
+#scroll {
+  overflow: auto;
+  padding: $titleHeight;
+  height: calc(100% - (#{$titleHeight} * 2));
+}
