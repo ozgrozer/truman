@@ -2,7 +2,9 @@ const puppeteer = require('puppeteer')
 
 const takeAScreenshot = async (opts) => {
   try {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({
+      executablePath: puppeteer.executablePath().replace('app.asar', 'app.asar.unpacked')
+    })
     const page = await browser.newPage()
     await page.goto(opts.url)
     await page.setViewport({

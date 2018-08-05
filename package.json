@@ -39,6 +39,8 @@
     "react-dom": "^16.3.1"
   },
   "build": {
+    "asar": true,
+    "asarUnpack": "node_modules/puppeteer/.local-chromium/**/*",
     "appId": "com.ozgrozer.truman",
     "files": [
       "electron.js",
