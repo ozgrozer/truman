@@ -46,8 +46,7 @@
     "mac": {
       "category": "productivity",
       "target": [
-        "zip",
-        "dmg"
+        "zip"
       ]
     }
   }
