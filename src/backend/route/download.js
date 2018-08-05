@@ -6,7 +6,7 @@ const download = (req, res) => {
     success: false
   }
   takeAScreenshot(req.body)
-    .then((result) => {
+    .then(() => {
       result.success = true
       res.json(result)
     })
