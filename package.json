@@ -2,20 +2,14 @@
   "name": "truman",
   "description": "A desktop app to take screenshots of web pages",
   "author": "ozgrozer",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "electron.js",
   "scripts": {
     "start-parcel": "parcel ./src/frontend/js/index.jsx --out-dir ./public --public-url / --port 1121",
     "start-electron": "electron .",
-    "build": "npm run build-parcel && npm run build-electron",
+    "build": "npm run build-parcel && npm run publish",
     "build-parcel": "parcel build ./src/frontend/js/index.jsx --out-dir ./public --public-url / --no-source-maps",
-    "build-electron": "build -mw && npm run release",
-    "release": "npm run release:mac && npm run release:win",
-    "prerelease:mac": "rm -rf releases/$npm_package_version/mac && mkdirp releases/$npm_package_version/mac",
-    "release:mac": "cp -R dist/*.dmg releases/$npm_package_version/mac/$npm_package_name-$npm_package_version.dmg",
-    "prerelease:win": "rm -rf releases/$npm_package_version/win && mkdirp releases/$npm_package_version/win",
-    "release:win": "cp -R dist/*.exe releases/$npm_package_version/win/$npm_package_name-$npm_package_version.exe",
-    "postrelease": "rm -rf dist"
+    "publish": "build -p always"
   },
   "engines": {
     "node": "^10.4.1",
@@ -32,6 +26,7 @@
     "parcel-bundler": "^1.7.0"
   },
   "dependencies": {
+    "electron-updater": "^3.0.3",
     "express": "^4.16.3",
     "pug": "^2.0.3",
     "puppeteer": "^1.6.2",
@@ -47,6 +42,13 @@
       "node_modules",
       "public/**/*",
       "src"
-    ]
+    ],
+    "mac": {
+      "category": "productivity",
+      "target": [
+        "zip",
+        "dmg"
+      ]
+    }
   }
 }

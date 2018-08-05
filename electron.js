@@ -1,5 +1,7 @@
 const path = require('path')
 const { app, BrowserWindow } = require('electron')
+const { autoUpdater } = require('electron-updater')
+
 const defaults = require(path.join(__dirname, 'src', 'backend', 'defaults'))
 require(path.join(__dirname, 'src', 'backend', 'index'))
 
@@ -22,6 +24,8 @@ const createWindow = () => {
   win.on('closed', () => {
     win = null
   })
+
+  autoUpdater.checkForUpdatesAndNotify()
 }
 
 app.on('ready', createWindow)
