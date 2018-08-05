@@ -10,6 +10,7 @@ const createWindow = () => {
     width: 500,
     height: 364,
     show: false,
+    frame: false,
     resizable: false,
     titleBarStyle: 'hidden',
     backgroundColor: '#ffffff'
