@@ -6,7 +6,7 @@ A desktop app to take screenshots of web pages
 
 ## Download
 
-[MacOS](/releases/latest)
+[MacOS](https://github.com/ozgrozer/truman/releases/download/v0.0.3/truman-0.0.3-mac.zip)
 
 ## Contribution
 
