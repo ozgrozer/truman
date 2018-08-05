@@ -12,7 +12,7 @@ A desktop app to take screenshots of web pages
 
 ## Contribution
 
-Feel free to contribute. Open a new [issue](/issues), or make a [pull request](/pulls).
+Feel free to contribute. Open a new [issue](https://github.com/ozgrozer/truman/issues), or make a [pull request](https://github.com/ozgrozer/truman/pulls).
 
 ## License
 
