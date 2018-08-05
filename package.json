@@ -10,11 +10,11 @@
     "build": "npm run build-parcel && npm run build-electron",
     "build-parcel": "parcel build ./src/frontend/js/index.jsx --out-dir ./public --public-url / --no-source-maps",
     "build-electron": "build -mw && npm run release",
-    "release": "npm run release:mac && npm run release:windows",
+    "release": "npm run release:mac && npm run release:win",
     "prerelease:mac": "rm -rf releases/$npm_package_version/mac && mkdirp releases/$npm_package_version/mac",
     "release:mac": "cp -R dist/*.dmg releases/$npm_package_version/mac/$npm_package_name-$npm_package_version.dmg",
-    "prerelease:windows": "rm -rf releases/$npm_package_version/windows && mkdirp releases/$npm_package_version/windows",
-    "release:windows": "cp -R dist/*.exe releases/$npm_package_version/windows/$npm_package_name-$npm_package_version.exe",
+    "prerelease:win": "rm -rf releases/$npm_package_version/win && mkdirp releases/$npm_package_version/win",
+    "release:win": "cp -R dist/*.exe releases/$npm_package_version/win/$npm_package_name-$npm_package_version.exe",
     "postrelease": "rm -rf dist"
   },
   "engines": {
@@ -43,7 +43,8 @@
     "files": [
       "electron.js",
       "node_modules",
-      "public/**/*"
+      "public/**/*",
+      "src"
     ]
   }
 }
