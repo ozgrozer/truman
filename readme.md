@@ -2,7 +2,7 @@
 
 A desktop app to take screenshots of web pages
 
-<img src="preview.jpg" alt="truman preview" width="612" />
+<img src="preview.png" alt="truman preview" width="502" />
 
 ## Download
 
